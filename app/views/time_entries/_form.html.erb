@@ -1,0 +1,42 @@
+<%if current_user.present?%>
+<%= current_user.first_name %>
+<%= current_user.last_name %>
+<%end%>
+
+<%= form_for(@time_entry) do |f| %>
+  <% if @time_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@time_entry.errors.count, "error") %> prohibited this time_entry from being saved:</h2>
+
+      <ul>
+      <% @time_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.select :name, options_for_select({ "Monday" => "Monday", "Tuesday" => "Tuesday", "Wednesday" => "Wendesday", "Thursday" => "Thursday", "Friday" => "Friday", "Saturday" => "Saturday"}, "Monday") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starts_at %><br>
+    <%= f.time_select :starts_at %>
+  </div>
+  </p>
+  
+  <div class="field">
+    <%= f.label :finish_at %><br>
+    <%= f.time_select :finish_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>

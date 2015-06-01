@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%if current_user.present?%>
+<%= current_user.first_name %>
+<%= current_user.last_name %>
+<%end%>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user_setting.name %>
+</p>
+
+<p>
+  <strong>Required Hours:</strong>
+  <%= @user_setting.required_hours %>
+</p>
+
+<p>
+  <strong>Setting:</strong>
+  <%= @user_setting.setting %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_setting_path(@user_setting) %> |
+<%= link_to 'Back', user_settings_path %>

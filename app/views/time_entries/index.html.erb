@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<%if current_user.present?%>
+<%= current_user.first_name %>
+<%= current_user.last_name %>
+<%end%>
+<h1>Listing Time Entries</h1>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Day</th>
+      <th>Time in</th>
+      <th>Time out</th>
+      <th>Hours worked</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @time_entries.each do |time_entry| %>
+      <tr>
+        <td><%= time_entry.user_id %></td>
+        <td><%= time_entry.name %></td>
+        <td><%= time_entry.starts_at.try(:to_s, :hours_mins)  %></td>
+        <td><%= time_entry.finish_at.try(:to_s, :hours_mins)  %></td>
+        <td><%= time_entry.hours_worked%></td>
+        <td><%= time_entry.status %></td>
+<!--         <td><%= link_to 'Show', time_entry %></td> -->
+<!--         <td><%= link_to 'Edit', edit_time_entry_path(time_entry) %></td>
+        <td><%= link_to 'Destroy', time_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Time entry', new_time_entry_path %> <%= link_to 'Back', users_path %>
+
