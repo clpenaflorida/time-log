@@ -4,10 +4,12 @@
 <%= current_user.first_name %>
 <%= current_user.last_name %>
 <%end%>
+<br/><br/><br/><br/>
+<div class="dashboard" id="dashboard">
+    <div class="dashboard-header" id="dashboard-header">User Settings</div>
 
-<h1>Listing User Settings</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>ID</th>
@@ -35,4 +37,5 @@
 
 <br>
 
-<%= link_to 'New User setting', new_user_setting_path %> 
+<%= link_to 'New User setting', new_user_setting_path, :class => 'btn' , :id => 'btn_updates' %> 
+</div>
