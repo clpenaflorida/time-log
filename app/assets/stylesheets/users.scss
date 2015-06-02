@@ -1,15 +1,23 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#label_signup {
+  color: white;
+}
+#header_signup {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-image: url(intro-bg1.jpg);
+
+    background-size: cover;
+}
 #panel-heading{
   background-color: #A78EC8;
   color:white;
-    border: 2px solid #A78EC8;
+  border: 2px solid #A78EC8;
 
 }
-#panel-body {
 
-}
 #btn_send {
   width:360px;
   background-color: transparent;
@@ -38,6 +46,7 @@
 }
 #signup {
 border: 2px solid #59FF82;
+background-color: transparent;
 color: #59FF82;
   width: 200px;
 }
@@ -73,7 +82,7 @@ color: white;
 
 
 }
-.intro-header {
+#header_landing {
     padding-top: 20px;
     padding-bottom: 50px;
     
@@ -225,6 +234,7 @@ nav.vertical {
 
     nav.vertical > ul > li {
       display: block;
+
     }
 
       nav.vertical > ul > li > a {
