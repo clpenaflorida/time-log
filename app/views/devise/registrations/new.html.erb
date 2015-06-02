@@ -1,7 +1,13 @@
-<div id="page_signup">
+<div class = "intro-header" id="header_signup">
 <br/><br/><br/><br/>
+
 <div class="container">
-<h2>Sign up</h2>
+<div class="row" >
+  <div class="col-md-6" id="signup_heading">
+            <h2>Sign up now!</h2>
+  </div>
+</div>
+<br/>
  
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
@@ -9,14 +15,14 @@
 <div class="row">
 <div class="col-md-6">
   <div class="form-group">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name , :id => 'label_signup'%><br />
     <%= f.text_field :first_name, autofocus: true , :class => 'form-control', :placeholder => "First name" %>
   </div>
 </div>
 
 <div class="col-md-6">
   <div class="form-group">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name , :id => 'label_signup'%><br />
     <%= f.text_field :last_name, autofocus: true , :class => 'form-control', :placeholder => "Last name"%>
   </div>
 </div>
@@ -24,7 +30,7 @@
 <div class="row">
 <div class="col-md-6">
   <div class="form-group">
-    <%= f.label :date_of_birth %><br />
+    <%= f.label :date_of_birth , :id => 'label_signup'%><br />
     <%= f.date_field :date_of_birth, autofocus: true , :class => 'form-control'%>
   </div>
 </div>
@@ -32,7 +38,7 @@
 <div class="col-md-6">
  
   <div class="form-group">
-    <%= f.label :email %><br />
+    <%= f.label :email, :id => 'label_signup' %><br />
     <%= f.email_field :email, autofocus: true, :class => 'form-control' , :placeholder => "Email Address"%>
   </div>
 </div>
@@ -41,7 +47,7 @@
 <div class="row">
  <div class="col-md-6">
   <div class="form-group">
-    <%= f.label :password %>
+    <%= f.label :password , :id => 'label_signup'%>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -50,7 +56,7 @@
   </div>
 <div class="col-md-6">
   <div class="form-group">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation , :id => 'label_signup'%><br />
     <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control', :placeholder => "Confirm Password" %>
   </div>
 </div>
@@ -60,9 +66,9 @@
 <div class="col-md-6"> 
   <div class="form-group">
   <%= f.simple_fields_for :companies do |company| %>
-    <%= company.label "Company Name" %><br />
+    <%= company.label "Company Name" , :id => 'label_signup'%><br />
     <%= company.text_field :name, autofocus: true, :class => 'form-control' %><br />
-    <%= company.label :domain %><br />
+    <%= company.label :domain, :id => 'label_signup' %><br />
     <%= company.text_field :domain, autofocus: true, :class => 'form-control' %><br />
   <% end %>
   </div>
@@ -71,15 +77,21 @@
 
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col0md-6">
+  </div>
+  <div class="col-md-12">
   <div class="actions">
     <%= f.submit "Sign up" , :class => 'btn btn-default btn-lg', :id => 'signup'%>
   </div>
   </div>
 </div>
 <% end %>
- Already have an account?
+<font style="color: white">
+ Already have an account?</font>
 <%= render "devise/shared/links" %>
 </form>
-</div>
-</div>
+
+
+</div><!--container-->
+
+</div><!--intro header -->
