@@ -1,0 +1,38 @@
+<%= form_for(@user_setting) do |f| %>
+  <% if @user_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_setting.errors.count, "error") %> prohibited this user_setting from being saved:</h2>
+
+      <ul>
+      <% @user_setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.collection_select :user_id, User.all, :id, :first_name %>
+  </p>
+  <form role="form">
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.select :name, options_for_select({ "Monday" => "Monday", "Tuesday" => "Tuesday", "Wednesday" => "Wendesday", "Thursday" => "Thursday", "Friday" => "Friday", "Saturday" => "Saturday"}, "Monday") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :setting %><br>
+    <%= f.select :setting, options_for_select({ "Allowed" => "Allowed", "Not Allowed" => "Not Allowed"}, "Allowed") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :required_hours %><br>
+    <%= f.text_field :required_hours %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</form>
