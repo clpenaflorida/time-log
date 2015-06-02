@@ -1,4 +1,4 @@
-
+<div class="container">
 <br/><br/><br/><br/>
 <div class="dashboard" id="dashboard">
     <div class="dashboard-header" id="dashboard-header">Listing Users</div>
@@ -56,10 +56,10 @@
 
   
         </td>
-        <td><%= link_to edit_user_path(user) , :class => 'btn', :id => 'edit' do %>
+        <td><%= link_to edit_user_path(user) , :class => 'btn', :id => 'btn_edit_home' do %>
 <span class="glyphicon glyphicon-pencil"></span> <% end %>
         </td>
-        <td><%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn', :id => 'destroy' do  %>
+        <td><%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn', :id => 'btn_destroy_home' do  %>
         <span class="glyphicon glyphicon-trash"></span>
   <% end %>
         </td>
@@ -67,5 +67,6 @@
     <% end %>
   </tbody>
 </table>
+</div>
 </div>
 </div>

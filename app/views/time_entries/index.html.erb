@@ -1,9 +1,13 @@
+
 <p id="notice"><%= notice %></p>
+
 <%if current_user.present?%>
 <%= current_user.first_name %>
 <%= current_user.last_name %>
 <%end%>
 <br/><br/><br/><br/>
+<div class="container">
+   <table class="table">
 <h1>Listing Time Entries</h1>
 <table>
   <thead>
@@ -39,3 +43,5 @@
 
 <%= link_to 'New Time entry', new_time_entry_path %> <%= link_to 'Back', users_path %>
 
+</table>
+</div>

@@ -1,9 +1,21 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#signup {
+border: 2px solid #59FF82;
+color: #59FF82;
+  width: 200px;
+}
+#signup:hover {
+background-color: #59FF82;
+color: white;
+  width: 200px;
+}
+
 #btn_updates {
   background-color: transparent;
-  border: 2px solid #A78EC8;
+  border: 2px solid #B479CD;
+  color: #B479CD;
 }
 
 #btn_updates:hover {
@@ -17,20 +29,22 @@
   font-family: Century Gothic;
   background-color: transparent;
   border: 5px;
-  color: black;
+  color: white;
   border: 2px solid white;
 }
 
 #btn_signup2:hover{
   background-color:rgba(255, 255, 255, 0.2);
 
+
 }
 .intro-header {
     padding-top: 20px;
     padding-bottom: 50px;
-    text-align: center;
+    
     color: #f8f8f8;
-    background-image: url(rhino.jpg);
+    background-image: url(suitup.gif);
+
     background-size: cover;
 }
 
@@ -73,7 +87,8 @@
   letter-spacing:6px;
 }
 .glyphicon:hover {
-  color: #F00;
+  color: white;
+  background-color: transparent;
 }
 
 #btn_signin {
