@@ -5,4 +5,10 @@ class Company < ActiveRecord::Base
 
 	accepts_nested_attributes_for :users
 
+  before_save :to_lower_case
+
+  def to_lower_case
+     self.domain = self.domain.downcase
+  end
+  
 end

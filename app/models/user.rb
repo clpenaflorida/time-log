@@ -10,26 +10,25 @@ class User < ActiveRecord::Base
 
 	accepts_nested_attributes_for :companies
 
-	before_create :check_if_company_exists
+	def check_if_company_exists (domain)
 
-	def check_if_company_exists
+		company = Company.find_by_domain(domain)
+		
+		if company.present?
 
-		company = self.companies.first
-		puts company.domain
-
-		this_domain = Company.find_by_domain(company.domain)
-
-		if this_domain.present?
 			puts = "----------------------------------------------"
-			puts company.domain + " Domain already exists "
+			puts " Domain already exists "
+			access_level = 2
 
-			self.access_level = 2
 		else 
 			puts = "----------------------------------------------"
-			puts company.domain + " Domain does not exists "
-			self.access_level = 1
-			
+			puts " Domain does not exists "
+			access_level = 1
+
 		end
+
+		return access_level
+	
 	end
 
 

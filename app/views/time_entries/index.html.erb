@@ -1,16 +1,27 @@
 
-<p id="notice"><%= notice %></p>
+<style>
+  .table{
+  
+  width: 60%;
+  max-width: 60%;
+  margin-left: 20%;
+}
 
-<%if current_user.present?%>
-<%= current_user.first_name %>
-<%= current_user.last_name %>
-<%end%>
+h1{
+  font-family: Oswald;
+  margin-left: 20%;
+  margin-bottom: 3%;
+  }
+  
+}
+</style>
+
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<p id="notice"><%= notice %></p>
 <br/><br/><br/><br/>
-<div class="container">
-   <table class="table">
-<h1>Listing Time Entries</h1>
-<table>
+<table class="table table-striped">
   <thead>
+  <h1>Time Entries</h1>
     <tr>
       <th>User</th>
       <th>Day</th>
@@ -41,7 +52,11 @@
 
 <br>
 
-<%= link_to 'New Time entry', new_time_entry_path %> <%= link_to 'Back', users_path %>
+    <% @user_settings = UserSetting.where(:user_id => current_user.id) %>
+    <% if @user_settings.present? %>
+    <%= link_to 'New Time entry', new_time_entry_path %> 
+    <% else %>
+    <%= "You currently don't have any user settings ." %>
+    <% end %>
+<%= link_to 'Back', users_path %>
 
-</table>
-</div>
