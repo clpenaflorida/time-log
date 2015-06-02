@@ -1,6 +1,41 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#panel-heading{
+  background-color: #A78EC8;
+  color:white;
+    border: 2px solid #A78EC8;
+
+}
+#panel-body {
+
+}
+#btn_send {
+  width:360px;
+  background-color: transparent;
+  border: 2px solid #59FF82;
+  color: #59FF82;
+
+}
+
+#btn_send:hover {
+  background-color: #59FF82;
+  color: white;
+}
+#linkthing:hover{
+  background-color: transparent;
+  font-weight:bold;
+  color: blue;
+}
+#linkthing1{
+
+  color: black;
+}
+#linkthing1:hover{
+  background-color: transparent;
+  font-weight:bold;
+  color: red;
+}
 #signup {
 border: 2px solid #59FF82;
 color: #59FF82;
