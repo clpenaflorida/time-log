@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 	has_many :user_settings
 	has_many :company_users, autosave: false
 	has_many :companies, through: :company_users
-
 	#accepts_nested_attributes_for :companies,:company_users
 
 	 #before_create:check_if_company_exists
