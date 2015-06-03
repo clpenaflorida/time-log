@@ -6,26 +6,39 @@ class UsersController < ApplicationController
   def index
     if current_user.present?
       @users = User.where(:id => current_user.id)
+
       @time_entries = TimeEntry.where(:user_id => current_user.id)
+
     else
       @users = User.all
       @time_entries = TimeEntry.all
     end
+
+    @resource = User.new
+    # clean_up_passwords(resource)
+    # yield resource if block_given?
+    # respond_with(resource, serialize_options(resource))
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    if current_user.present?
+        @cu = CompanyUser.where(:user_id => current_user.id).first
+     end
   end
 
   # GET /users/new
   def new
     @user = User.new
     @user.companies.build
+
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # GET /users/1/edit
   def edit
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # POST /users
@@ -57,6 +70,22 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  helper_method :resource
+  helper_method :resource_name
+  helper_method :devise_mapping
 
   # DELETE /users/1
   # DELETE /users/1.json

@@ -7,6 +7,7 @@ class TimeEntriesController < ApplicationController
   
     if current_user.present?
     @time_entries = TimeEntry.where(:user_id => current_user.id)
+    @cu = CompanyUser.where(:user_id => current_user.id).first
     else 
       @time_entries = TimeEntry.all
     end
@@ -16,20 +17,24 @@ class TimeEntriesController < ApplicationController
   # GET /time_entries/1
   # GET /time_entries/1.json
   def show
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   def login 
     @time_entry = TimeEntry.new
+    @cu = CompanyUser.where(:user_id => current_user.id).first
 
   end
 
   # GET /time_entries/new
   def new
     @time_entry = TimeEntry.new
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # GET /time_entries/1/edit
   def edit
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # POST /time_entries

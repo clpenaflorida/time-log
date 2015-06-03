@@ -1,5 +1,5 @@
 class CompanyUsersController < ApplicationController
-	before_action :set_company, only: [:show, :edit, :update, :destroy]
+	before_action :set_company_user, only: [:show, :edit, :update, :destroy]
 
   # GET /company_users
   # GET /company_users.json
@@ -10,6 +10,7 @@ class CompanyUsersController < ApplicationController
   # GET /company_users/1
   # GET /company_users/1.json
   def show
+      
   end
 
   # GET /company_users/new
@@ -24,7 +25,9 @@ class CompanyUsersController < ApplicationController
   # POST /company_users
   # POST /company_users.json
   def create
-    @company_user = CompanyUser.new(company_params)
+
+    @company_user = CompanyUser.new(CompanyUser_params)
+
 
     respond_to do |format|
       if @company_user.save

@@ -2,12 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+#banner1 {
+  padding: 50px 15px;
+}
 
 #signup_heading {
   color: white;
   background-color: transparent;
-
 }
 #label_signup {
   color: white;
@@ -20,9 +21,9 @@
     background-size: cover;
 }
 #panel-heading{
-  background-color: #A78EC8;
+  background-color: black;
   color:white;
-  border: 2px solid #A78EC8;
+
 
 }
 
