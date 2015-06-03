@@ -9,6 +9,11 @@ class UsersController < ApplicationController
     else
       @users = User.all
     end
+
+    @resource = User.new
+    # clean_up_passwords(resource)
+    # yield resource if block_given?
+    # respond_with(resource, serialize_options(resource))
   end
 
   # GET /users/1
@@ -55,6 +60,22 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  helper_method :resource
+  helper_method :resource_name
+  helper_method :devise_mapping
 
   # DELETE /users/1
   # DELETE /users/1.json
