@@ -9,15 +9,16 @@ class RegistrationsController < Devise::RegistrationsController
   def create
 
     build_resource(sign_up_params)
+ 
+    if(resource.save)
 
-    access_level = resource.check_if_company_exists(params[:domain])
+      company = resource.check_if_company_exists(params[:user][:companies])
+      access_level = resource.check_what_access_level(company.company_users)
 
+      company_user = resource.company_users.build(company_id: company.id, access_level: access_level, first_name: resource.first_name, last_name: resource.last_name)
 
-    resource.save
-
-
-    company_users = resource.company_users.first
-    company_users.update_attributes(access_level: access_level, first_name: resource.first_name, last_name: resource.last_name)
+      company_user.save
+    end
 
 
     yield resource if block_given?
@@ -41,7 +42,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
  
   def sign_up_params
-    allow = [:email, :password, :password_confirmation, :first_name, :last_name, :date_of_birth, :access_level, [companies_attributes: [:name, :domain]]]
+    allow = [:email, :password, :password_confirmation, :first_name, :last_name, :date_of_birth, :access_level, companies_attributes: [:domain, :name]]
     params.require(resource_name).permit(allow)
   end
  
