@@ -11,6 +11,7 @@ class CompaniesController < ApplicationController
 
 	def create
 	   @company = Company.new(company_params)
+     
 	 
 	   respond_to do |format|
 	     if @time_entry.save

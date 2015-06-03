@@ -28,7 +28,6 @@ class CompanyUsersController < ApplicationController
 
     @company_user = CompanyUser.new(CompanyUser_params)
 
-
     respond_to do |format|
       if @company_user.save
         format.html { redirect_to @company_user, notice: 'User setting was successfully created.' }
