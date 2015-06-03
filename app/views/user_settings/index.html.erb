@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%if current_user.present?%>
+<%if current_user.present? && @cu.access_level == 1%>
 <%= current_user.first_name %>
 <%= current_user.last_name %>
 <%end%>

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def index
     if current_user.present?
       @users = User.where(:id => current_user.id)
+        @cu = CompanyUser.where(:user_id => current_user.id).first
     else
       @users = User.all
     end
@@ -19,16 +20,22 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if current_user.present?
+        @cu = CompanyUser.where(:user_id => current_user.id).first
+     end
   end
 
   # GET /users/new
   def new
     @user = User.new
     @user.companies.build
+
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # GET /users/1/edit
   def edit
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # POST /users
