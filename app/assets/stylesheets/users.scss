@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 #signup_heading {
   color: white;
   background-color: transparent;
@@ -156,12 +158,15 @@ color: white;
   font-family: Century Gothic;
 }
 #dashboard-header {
-  background-color:#A78EC8;	
-  height:40px;
+  background-color:#6f5499;	
+  height:60px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   box-shadow: 1px 2px 2px #aaa;
   padding: 10px 15px;
+  font-size: 35px;
+  color: #fff;
+  font-family: 'Oleo Script', cursive;
 }
 .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
     background-color: white;
@@ -174,8 +179,8 @@ color: white;
   padding-top:10px;
   padding-left:20px;
   padding-right:20px;
-  font-family:Century Gothic;
-  font-size: 14px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
 
 }
 .navbar-nav > li a:hover{
@@ -221,7 +226,7 @@ div.wrapper {
 
 p {
   font-family: georgia;
-  font-size: 1rem;
+  font-size: 18px ;
   line-height: 25px;
   margin: 24px 0;
   text-align: center;
@@ -298,3 +303,4 @@ nav.vertical {
                 color: rgb(255,255,255);
                 padding: 10px 0 10px 50px;
               }
+

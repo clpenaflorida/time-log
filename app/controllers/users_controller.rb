@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   def index
     if current_user.present?
       @users = User.where(:id => current_user.id)
+      @time_entries = TimeEntry.where(:user_id => current_user.id)
     else
       @users = User.all
+      @time_entries = TimeEntry.all
     end
   end
 
