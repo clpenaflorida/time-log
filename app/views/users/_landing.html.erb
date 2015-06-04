@@ -25,9 +25,10 @@
                              <!--   <a href="#" class="btn btn-default btn-lg" id="btn_signup2">SIGN UP</a> -->
                             </li>
                             <li>
- <%= link_to "SIGN UP", new_user_registration_path, :class => 'btn btn-default btn-lg'  , :id => 'btn_signup2' %>
+ <!--<%= link_to "SIGN UP", new_user_registration_path, :class => 'btn btn-default btn-lg'  , :id => 'btn_signup2' %> -->
                            <!-- <a href="#"class="btn btn-default btn-lg" id="btn_signup2">SIGN IN</a> -->
-
+<!--<button type="button" class="btn btn-default btn-lg" id="btn_signup2"><a href="#section_signup">SIGNUP</a></button>-->
+<a class="btn btn-default btn-lg smoothScroll" id="btn_signup2" href="#section_signup">SIGN UP</a>
                             </li>
                           
                         </ul>
@@ -41,6 +42,12 @@
     </div>
     </section>
     <!-- /.intro-header -->
+  <section id="section_banner">
   <%= render 'users/landingbanner' %>
+  </section>
 
+  <section id="section_signup">
    <%= render "devise/registrations/form" %> 
+  </section>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="smoothscroll.js"></script>

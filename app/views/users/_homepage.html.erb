@@ -11,6 +11,7 @@ text-align: left;
 margin-top: 2%;
 margin-left: 18%;
 font-family: Oswald;
+
 }
 
   .table{
@@ -76,7 +77,7 @@ h1{
 <link href='http://fonts  .googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 
 <div class="container">
-<br/><br/><br/><br/>
+<br/>
 <div class="dashboard" id="dashboard">
 <!-- User Info -->
     <div id="main-container" class="user_info">
@@ -116,11 +117,17 @@ h1{
               <%= user.date_of_birth%>
           </div>
 
+          <div class="field form-group info">
+          
+  </div>
+
+
           <%end%>
           </div>
+
           </div>
-<div class = "time_entries">
-          <table class="table table-striped">
+  <div class = "time_entries">
+  <table class="table table-striped">
   <thead>
   <h1>Time Entries</h1>
     <tr>
@@ -143,7 +150,9 @@ h1{
         <td><%= time_entry.finish_at.try(:to_s, :hours_mins)  %></td>
         <td><%= time_entry.hours_worked%></td>
         <td><%= time_entry.status %></td>
+
       </tr>
+      
     <% end %>
   </tbody>
 </table>
@@ -152,6 +161,8 @@ h1{
           </div>
       </center>
     </div>
+
+
 
  <!-- User Info -->
 
