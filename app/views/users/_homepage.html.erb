@@ -61,11 +61,14 @@ h1{
 
       margin-top: 10%;
     }
-    .user{
+    #user{
 
-      margin-right: 60%;
   margin-top: 6%;
+    font-size: 18px;
+      margin-left: 1%;
+        margin-bottom: 14%;
     }
+
 
 </style>
 
@@ -83,9 +86,12 @@ h1{
             <div class="dashboard-header" id="dashboard-header">
              Kaishahero
             </div>
-<div class="user">
-        <% @users.each do |user| %>
 
+<div id="user" class="row">
+<div class="col-md-6">
+<%= image_tag("avatar.jpg", :alt => "rss feed", height: '250', width: '250', :class => 'img-circle') %>
+        <% @users.each do |user| %></div>
+<div class="col-md-6">
           <div class="field form-group info"> 
             <label>ID: </label>
               <%= user.id %>
@@ -119,9 +125,9 @@ h1{
           <%end%>
           </div>
 
-          <hr/>
-<div class = "time_entries">
-          <table class="table table-striped">
+          </div>
+  <div class = "time_entries">
+  <table class="table table-striped">
   <thead>
   <h1>Time Entries</h1>
     <tr>

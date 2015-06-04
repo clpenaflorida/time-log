@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 #banner1 {
   padding: 50px 15px;
 }
@@ -54,14 +56,15 @@
   color: red;
 }
 #signup {
-border: 2px solid #59FF82;
+border: 2px solid #FFF;
 background-color: transparent;
-color: #59FF82;
+color: #FFF;
   width: 200px;
 }
 #signup:hover {
-background-color: #59FF82;
-color: white;
+background-color: rgba(255, 255, 255, 0.9);
+color: #100F0F;
+border: none;
   width: 200px;
 }
 
@@ -79,7 +82,7 @@ color: white;
 
 
 #btn_signup2 {
-  font-family: Century Gothic;
+  font-family: Oswald;
   background-color: transparent;
   border: 5px;
   color: white;
@@ -153,12 +156,13 @@ color: white;
 	color:white;
 }
 
+
 #dashboard {
   background-color:white;
   font-family: Century Gothic;
 }
 #dashboard-header {
-  background-color:#6f5499;	
+  background-color:#212121;	
   height:60px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
