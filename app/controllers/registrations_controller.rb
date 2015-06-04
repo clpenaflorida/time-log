@@ -6,6 +6,10 @@ class RegistrationsController < Devise::RegistrationsController
     respond_with self.resource
   end
 
+  def edit
+    @cu = CompanyUser.where(:user_id => current_user.id).first
+  end
+  
   def create
 
     build_resource(sign_up_params)
