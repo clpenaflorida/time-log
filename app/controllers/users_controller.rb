@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.companies.build
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # GET /users/1/edit
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @cu = CompanyUser.where(:user_id => current_user.id).first
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -57,6 +58,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @cu = CompanyUser.where(:user_id => current_user.id).first
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

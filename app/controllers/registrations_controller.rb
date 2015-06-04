@@ -1,4 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
+
+  def edit 
+    @cu = CompanyUser.where(:user_id => current_user.id).first
+  end 
+
+ 
  
   def new
     build_resource({})
