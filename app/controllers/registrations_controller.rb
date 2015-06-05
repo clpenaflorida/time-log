@@ -1,36 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
-
-  def update
-
-    @user = User.find(current_user.id)
-
-    successfully_updated = if needs_password?(@user, params)
-      @user.update_attributes(account_update_params)
-      else
-        params[:user].delete(:current_password)
-        @user.update_attributes(account_update_params)
-      end
-
-      if successfully_updated
-        set_flash_message :notice, :updated
-
-        redirect_to after_update_path_for(@user)
-      else
-        render "edit"
-      end
-
-  end  
  
+ def edit
+ @cu = CompanyUser.where(:user_id => current_user.id).first
+ end
   def new
     build_resource({})
     self.resource.companies.build
     respond_with self.resource
   end
 
-  def edit
-   # @cu = CompanyUser.where(:user_id => current_user.id).first
-  end
-  
   def create
 
     build_resource(sign_up_params)
@@ -69,11 +47,6 @@ class RegistrationsController < Devise::RegistrationsController
   def sign_up_params
     allow = [:email, :password, :password_confirmation, :first_name, :last_name, :date_of_birth, :access_level, companies_attributes: [:domain, :name]]
     params.require(resource_name).permit(allow)
-  end
-
-  def needs_password?(user, params)
-    user.email != params[:user][:email] ||
-      params[:user][:password].present?
   end
  
 end
