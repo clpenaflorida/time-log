@@ -1,10 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def edit 
-    @cu = CompanyUser.where(:user_id => current_user.id).first
-  end 
-
- 
+   # @cu = CompanyUser.where(:user_id => current_user.id).first
+  end  
  
   def new
     build_resource({})
@@ -13,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def edit
-    @cu = CompanyUser.where(:user_id => current_user.id).first
+   # @cu = CompanyUser.where(:user_id => current_user.id).first
   end
   
   def create

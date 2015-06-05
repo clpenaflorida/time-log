@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       @users = User.where(:id => current_user.id)
 
       @time_entries = TimeEntry.where(:user_id => current_user.id)
-      @cu = CompanyUser.where(:user_id => current_user.id).first
+     # @cu = CompanyUser.where(:user_id => current_user.id).first
 
     else
       @users = User.all
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.companies.build
-    @cu = CompanyUser.where(:user_id => current_user.id).first
+  #  @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # GET /users/1/edit
