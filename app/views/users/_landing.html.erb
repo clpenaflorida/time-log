@@ -7,8 +7,8 @@
 </style>
 
    <!-- Header -->
-  <section id="top">  <a name="about"></a>
-    <div class="intro-header" id="header_landing">
+   <a name="about"></a>
+    <div class="intro-header page-scroll" id="header_landing" id="top">
         <div class="container">
 
             <div class="row-fluid">
@@ -40,7 +40,6 @@
         <!-- /.container -->
 
     </div>
-    </section>
     <!-- /.intro-header -->
   <section id="section_banner">
   <%= render 'users/landingbanner' %>
@@ -50,4 +49,13 @@
    <%= render "devise/registrations/form" %> 
   </section>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="smoothscroll.js"></script>
+
+
+    <script src="javascripts/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="javascripts/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="javascripts/jquery.easing.min.js"></script>
+    <script src="javascripts/scrolling-nav.js"></script>
