@@ -184,8 +184,13 @@ border: none;
   padding-top:10px;
   padding-left:20px;
   padding-right:20px;
-  font-family: 'Oswald', sans-serif;
-  font-size: 18px;
+  font-family: 'Oswald','Open Sans Condensed';
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  color: #777;
+  letter-spacing: 0;
 
 }
 .navbar-nav > li a:hover{
