@@ -15,12 +15,15 @@
       </ul>
     </div>
   <% end %>
+
 <form role="form">
 <div class="row">
 <div class="col-md-6">
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.select :name, options_for_select({ "Monday" => "Monday", "Tuesday" => "Tuesday", "Wednesday" => "Wendesday", "Thursday" => "Thursday", "Friday" => "Friday", "Saturday" => "Saturday"}, "Monday") %>
+     <%= f.select(:name, options_for_select({ "Monday" => "Monday", "Tuesday" => "Tuesday", "Wednesday" => "Wendesday", "Thursday" => "Thursday", "Friday" => "Friday", "Saturday" => "Saturday"}, "Monday"), {}, {:class => "selectpicker show-tick"}) %>
+
+
   </div>
  </div></div>
   <div class="field">
