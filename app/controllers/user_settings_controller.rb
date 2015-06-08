@@ -1,11 +1,12 @@
 class UserSettingsController < ApplicationController
   before_action :set_user_setting, only: [:show, :edit, :update, :destroy]
 
+
   # GET /user_settings
   # GET /user_settings.json
   def index
     @user_settings = UserSetting.all
- #   @cu = CompanyUser.where(:user_id => current_user.id).first
+    @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # GET /user_settings/1
@@ -23,6 +24,7 @@ class UserSettingsController < ApplicationController
   # GET /user_settings/1/edit
   def edit
  #   @cu = CompanyUser.where(:user_id => current_user.id).first
+ @current_user_comp_id = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # POST /user_settings

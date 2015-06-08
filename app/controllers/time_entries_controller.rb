@@ -7,7 +7,7 @@ class TimeEntriesController < ApplicationController
   
     if current_user.present?
     @time_entries = TimeEntry.where(:user_id => current_user.id)
-   # @cu = CompanyUser.where(:user_id => current_user.id).first
+    @cu = CompanyUser.where(:user_id => current_user.id).first
     else 
       @time_entries = TimeEntry.all
     end
@@ -89,4 +89,5 @@ class TimeEntriesController < ApplicationController
     def time_entry_params
       params.require(:time_entry).permit(:user_id, :starts_at, :finish_at, :name)
     end
+
 end

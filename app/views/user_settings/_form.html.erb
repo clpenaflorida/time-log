@@ -13,7 +13,8 @@
 
   <p>
     <%= f.label :user_id %><br />
-    <%= f.collection_select :user_id, User.all, :id, :first_name %>
+    <%@current_user_comp_id = CompanyUser.where(:user_id => current_user.id).first.company_id%>
+    <%= f.collection_select :user_id, CompanyUser.where(:company_id => @current_user_comp_id), :user_id, :first_name%>
   </p>
   <form role="form">
   <div class="form-group">
