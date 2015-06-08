@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527053851) do
+ActiveRecord::Schema.define(version: 20150608091355) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name",   limit: 255
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150527053851) do
     t.integer  "required_hours", limit: 4
     t.integer  "user_id",        limit: 4
     t.string   "setting",        limit: 255
+    t.integer  "admin_id",       limit: 4
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,7 +5,8 @@ class UserSettingsController < ApplicationController
   # GET /user_settings
   # GET /user_settings.json
   def index
-    @user_settings = UserSetting.all
+    #@user_settings = UserSetting.all
+    @user_settings = UserSetting.where(:admin_id => current_user.id)
     @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
