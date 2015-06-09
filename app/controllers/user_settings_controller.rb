@@ -13,13 +13,13 @@ class UserSettingsController < ApplicationController
   # GET /user_settings/1
   # GET /user_settings/1.json
   def show
-  #  @cu = CompanyUser.where(:user_id => current_user.id).first
+
   end
 
   # GET /user_settings/new
   def new
     @user_setting = UserSetting.new
- #   @cu = CompanyUser.where(:user_id => current_user.id).first
+   # @cu = CompanyUser.where(:user_id => current_user.id).first
   end
 
   # GET /user_settings/1/edit

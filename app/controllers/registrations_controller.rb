@@ -21,16 +21,15 @@ class RegistrationsController < Devise::RegistrationsController
 
   end  
  
+ def edit
+ @cu = CompanyUser.where(:user_id => current_user.id).first
+ end
   def new
     build_resource({})
     self.resource.companies.build
     respond_with self.resource
   end
 
-  def edit
-   # @cu = CompanyUser.where(:user_id => current_user.id).first
-  end
-  
   def create
 
     build_resource(sign_up_params)
