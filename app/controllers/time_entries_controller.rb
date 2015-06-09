@@ -52,6 +52,13 @@ class TimeEntriesController < ApplicationController
         format.json { render json: @time_entry.errors, status: :unprocessable_entity }
       end
     end
+
+  rescue
+   render :json => "The day you chose is not in your list."
+    #respond_to do |format|
+    #   format.html { render :new }
+    #   format.json { render json: @time_entry.errors.add(:name, "You are not allowed to create a time entry in the day you chose." )}
+    #end
   end
 
   # PATCH/PUT /time_entries/1
