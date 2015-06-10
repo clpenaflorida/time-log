@@ -13,6 +13,11 @@
   body{
    background: #ebebeb;
   }
+  .LeName{
+
+    font-size: 25px;
+  }
+
 </style>
 
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -90,7 +95,8 @@
           <% else %>
             <div class="collapse navbar-collapse" id="signout_nav">
               <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">Kaishahero</li>               
+                       <li class="active"><li><%= link_to 'Kaishahero',users_path, :class => 'navbar-link', :id => 'btn_animate' %>
+                               
               </ul>
             </div><!-- /.navbar-collapse -->
           <% end %>

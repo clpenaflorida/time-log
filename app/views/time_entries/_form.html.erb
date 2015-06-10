@@ -13,25 +13,28 @@
 
 <form role="form">
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-">
   <div class="form-group">
-    <label>Name: </label> <%= f.select(:name, options_for_select({ "Monday" => "Monday", "Tuesday" => "Tuesday", "Wednesday" => "Wendesday", "Thursday" => "Thursday", "Friday" => "Friday", "Saturday" => "Saturday"}, "Monday"), {}, {:class => "selectpicker show-tick"}) %>
+    <label>Name: </label> <%= f.select(:name, options_for_select({ "Monday" => "Monday", "Tuesday" => "Tuesday", "Wednesday" => "Wendesday", "Thursday" => "Thursday", "Friday" => "Friday", "Saturday" => "Saturday"}, "Monday"), {}, {:class => "dropdown btn btn-default dropdown-toggle "}) %>
   </div>
  </div>
 </div>
   <div class="field">
     <label>Time in: </label>
-    <%= f.time_select :starts_at %>
+    <%= f.time_select :starts_at, {}, {:class => 'dropdown btn btn-default dropdown-toggle'} %>
   </div>
   </p>
   
   <div class="field">
     <label>Time out: </label>
-    <%= f.time_select :finish_at %>
+    <%= f.time_select :finish_at, {}, {:class => 'dropdown btn btn-default dropdown-toggle'}%>
   </div>
  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-success'%>
+  </div>
+  <div class="actions">
+    <%= link_to 'Cancel', users_path, class: "btn btn-danger" %>
   </div>
 <% end %>
 </form>
