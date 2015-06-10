@@ -55,16 +55,33 @@ form{
 }
 
 .panel-default{
-  margin-top: 10%;
+  margin-top: 4%;
 }
     
 #user{
   margin-top: 6%;
   font-size: 18px;
   margin-left: 1%;
+  margin-right: 5%;
   margin-bottom: 14%;
 }
 
+.avatar{
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+background-color: #fff;
+-webkit-box-shadow: 0 0 0 6px #fff, 0 0 0 8px #ddd, 0 0px 0px 0px rgba(0,0,0,.2);     
+-moz-box-shadow: 0 0 0 6px #fff, 0 0 0 8px #ddd, 0 0px 0px 0px rgba(0,0,0,.2);     
+box-shadow: 0 0 0 6px #fff, 0 0 0 8px #ddd, 0 0px 0px 0px rgba(0,0,0,.2); 
+}
+
+.verticalLine {
+    border-left: thin solid #F2F0F3;
+}
+
+.col-md-6{
+  width: 38%;  
+}
 
 </style>
 
@@ -79,15 +96,15 @@ form{
     <div id="main-container" class="user_info">
       <center>
         <div class="panel panel-default"> 
-          <div class="dashboard-header" id="dashboard-header">Kaishahero</div>
+          <div class="dashboard-header" id="dashboard-header">your profile</div>
 
         <div id="user" class="row">
-          <div class="col-md-6">
-            <%= image_tag("avatar.jpg", :alt => "rss feed", height: '300', width: '300', :class => 'img-circle') %>
+          <div class="col-md-6" id="my_avatar">
+            <%= image_tag("agarfieldftw.jpg", :alt => "rss feed", height: '100', width: '100', :class => 'avatar') %>
           </div>
 
           <% @users.each do |user| %>
-            <div class="col-md-6">
+            <div class="col-md-6 verticalLine" id="my_info">
               <div class="field form-group info"> 
                 <label>ID: </label>
                 <%= user.id %>
